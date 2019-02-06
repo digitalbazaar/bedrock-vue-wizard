@@ -1,40 +1,38 @@
 <template>
   <q-page
-    class="column gutter-md"
+    class="column gutter-md background"
     padding>
     <div class="column items-center">
-      <div>
-        <br-wizard
-          :steps="steps"
-          :blockNext="blockNext"
-          @back="back($event)"
-          @next="next($event)"
-          @submit="submit($event)"
-          @index="stepIndex = $event">
-          <template slot="step">
-            <welcome
-              v-if="steps[stepIndex].name === 'Welcome'"
-              :steps="steps"/>
-            <domain
-              v-if="steps[stepIndex].name === 'Domain'"
-              :storedData="domainData"
-              @data="domainData = $event"
-              @blocker="blockNext = $event"
-              ref="domain" />
-            <administrator
-              v-if="steps[stepIndex].name === 'Administrator'"
-              :storedData="adminData"
-              @data="adminData = $event"
-              @blocker="blockNext = $event"
-              ref="administrator" />
-            <review
-              v-if="steps[stepIndex].name === 'Review'"
-              @data="reviewData = $event"
-              :domain="domainData"
-              :administrator="adminData" />
-          </template>
-        </br-wizard>
-      </div>
+      <br-wizard
+        :steps="steps"
+        :blockNext="blockNext"
+        @back="back($event)"
+        @next="next($event)"
+        @submit="submit($event)"
+        @index="stepIndex = $event">
+        <template slot="step">
+          <welcome
+            v-if="steps[stepIndex].name === 'Welcome'"
+            :steps="steps"/>
+          <domain
+            v-if="steps[stepIndex].name === 'Domain'"
+            :storedData="domainData"
+            @data="domainData = $event"
+            @blocker="blockNext = $event"
+            ref="domain" />
+          <administrator
+            v-if="steps[stepIndex].name === 'Administrator'"
+            :storedData="adminData"
+            @data="adminData = $event"
+            @blocker="blockNext = $event"
+            ref="administrator" />
+          <review
+            v-if="steps[stepIndex].name === 'Review'"
+            @data="reviewData = $event"
+            :domain="domainData"
+            :administrator="adminData" />
+        </template>
+      </br-wizard>
     </div>
   </q-page>
 </template>
