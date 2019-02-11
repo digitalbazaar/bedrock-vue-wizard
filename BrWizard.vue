@@ -172,5 +172,257 @@ export default {
 };
 
 </script>
-<style>
+<style lang="less" scoped>
+@import 'main.less';
+
+/* FIXME: remove background? */
+.background {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="603.237" viewBox="0 0 1920 603.237"><g id="Group_14" data-name="Group 14" transform="translate(0 -71)"><path id="Path_3" data-name="Path 3" d="M1920,674.237,0,320.263V71H1920Z" fill="@{br-wizard-tertiary}"/><path id="Path_2" data-name="Path 2" d="M0,674.237,1920,320.263V71H0Z" fill="@{br-wizard-secondary}"/></g></svg>');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.top-spacing {
+  padding-top: 72px;
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.btn-width {
+  width: calc(50% - 16px);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.box-width {
+  width: 100%;
+  max-width: 900px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-450 {
+  max-width: 450px;
+}
+
+.bg-red-main {
+  background-color: @br-wizard-primary;
+}
+
+.text-red-main {
+  color: @br-wizard-primary;
+}
+
+.border-red-main {
+  border: 1px solid @br-wizard-primary;
+}
+
+.q-mb-xxl {
+  margin-bottom: 122px;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.circle {
+  border-radius: 50%;
+  margin-top: -148px;
+}
+
+.circle img {
+  width: 100px;
+  height: 100px;
+}
+
+.overflow-hidden {
+  overflow: hidden
+}
+
+.overflow {
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInTop {
+  animation-delay: .2s;
+  animation-name: fadeInTop;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation-delay: 0s;
+  animation-name: fadeInRight;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+  background: none;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  animation-delay: 0s;
+  animation-name: slideInRight;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.slideOutLeft {
+  animation-delay: 0s;
+  animation-name: slideOutLeft;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  animation-delay: 0s;
+  animation-name: slideInLeft;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.slideOutRight {
+  animation-delay: 0s;
+  animation-name: slideOutRight;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeOutIcon {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.fadeOutIcon {
+  animation-delay: 0;
+  animation-name: fadeOutIcon;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeInIcon {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInIcon {
+  animation-delay: 0;
+  animation-name: fadeInIcon;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  h5 {
+    font-size: 18px;
+  }
+
+  .btn-width {
+    font-size: 14px;
+  }
+
+  .circle {
+    margin-top: -87px;
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .overflow-hidden {
+    padding: 36px 24px 24px 24px;
+  }
+}
 </style>
