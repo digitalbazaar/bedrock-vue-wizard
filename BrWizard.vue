@@ -42,10 +42,10 @@
                 :class="{'q-ml-md': currentStepIndex > 0}"
                 @next="onNext()"
                 :disabled="blockNext" />
-              <submit-button
+              <finish-button
                 v-if="currentStepIndex === steps.length - 1"
                 class="q-ml-md"
-                @submit="onSubmit()" />
+                @finish="onFinish()" />
             </div>
           </div>
         </div>
@@ -64,11 +64,11 @@
 import StepProgress from './StepProgress.vue';
 import NextButton from './NextButton.vue';
 import BackButton from './BackButton.vue';
-import SubmitButton from './SubmitButton.vue';
+import FinishButton from './FinishButton.vue';
 
 export default {
   name: 'BrWizard',
-  components: {StepProgress, NextButton, BackButton, SubmitButton},
+  components: {StepProgress, NextButton, BackButton, FinishButton},
   mounted() {
     this.currentStep = this.steps[this.currentStepIndex];
   },
@@ -146,12 +146,12 @@ export default {
         this.animations.fadeInIcon = true;
       }, 300);
     },
-    async onSubmit() {
-      if(!await this._emitCancelableEvent('submit')) {
-        console.log('submit was canceled!');
+    async onFinish() {
+      if(!await this._emitCancelableEvent('finish')) {
+        console.log('finish was canceled!');
         return;
       }
-      console.log('submit is ok!');
+      console.log('finish is ok!');
     },
     async _emitCancelableEvent(name, event = {}) {
       try {

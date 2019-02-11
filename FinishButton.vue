@@ -1,5 +1,6 @@
 <template>
-  <q-btn @click="submit()" class="bg-red-main text-white btn-width">Submit</q-btn>
+  <q-btn @click="finish()"
+    class="bg-red-main text-white btn-width">Finish</q-btn>
 </template>
 <script>
 /*!
@@ -8,10 +9,10 @@
 'use strict';
 
 export default {
-  name: 'SubmitButton',
+  name: 'FinishButton',
   methods: {
-    submit() {
-      this.$emit('submit')
+    finish() {
+      this.$emit('finish')
     }
   }
 };
