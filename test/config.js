@@ -14,3 +14,9 @@ config.views.system.packages.push({
   path: path.join(__dirname, 'components'),
   manifest: path.join(__dirname, 'package.json')
 });
+
+// images
+config.express.static.push({
+  route: '/images',
+  path: path.join(__dirname, 'components', 'images')
+});
