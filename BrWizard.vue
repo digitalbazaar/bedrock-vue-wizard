@@ -175,14 +175,6 @@ export default {
 <style lang="less" scoped>
 @import 'main.less';
 
-/* FIXME: remove background? */
-.background {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="603.237" viewBox="0 0 1920 603.237"><g id="Group_14" data-name="Group 14" transform="translate(0 -71)"><path id="Path_3" data-name="Path 3" d="M1920,674.237,0,320.263V71H1920Z" fill="@{br-wizard-tertiary}"/><path id="Path_2" data-name="Path 2" d="M0,674.237,1920,320.263V71H0Z" fill="@{br-wizard-secondary}"/></g></svg>');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-attachment: fixed;
-}
-
 .top-spacing {
   padding-top: 72px;
 }
@@ -233,8 +225,11 @@ export default {
 }
 
 .circle {
-  border-radius: 50%;
+  border-top-left-radius: 152px;
+  border-top-right-radius: 152px;
   margin-top: -148px;
+  height: 76px;
+  box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
 .circle img {
@@ -413,7 +408,11 @@ export default {
   }
 
   .circle {
-    margin-top: -87px;
+    margin-top: -84px;
+    border-top-left-radius: 76px;
+    border-top-right-radius: 76px;
+    height: 38px;
+    box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
   }
 
   .circle img {
