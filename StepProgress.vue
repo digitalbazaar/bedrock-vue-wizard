@@ -29,6 +29,11 @@ export default {
 <style lang="less" scoped>
 @import 'main.less';
 
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .dot li {
   display: inline-block;
   width: 15px;

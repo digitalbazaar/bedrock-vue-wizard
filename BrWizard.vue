@@ -35,8 +35,9 @@
             <div class="row justify-center width-100 q-mt-lg">
               <back-button
                 v-if="currentStepIndex > 0"
+                class="q-mr-md"
                 @back="onBack()"
-                class="q-mr-md" />
+                :disabled="blockBack" />
               <next-button
                 v-if="currentStepIndex < steps.length - 1"
                 :class="{'q-ml-md': currentStepIndex > 0}"
@@ -45,7 +46,8 @@
               <finish-button
                 v-if="currentStepIndex === steps.length - 1"
                 class="q-ml-md"
-                @finish="onFinish()" />
+                @finish="onFinish()"
+                :disabled="blockFinish" />
             </div>
           </div>
         </div>
@@ -78,6 +80,14 @@ export default {
       required: true
     },
     blockNext: {
+      type: Boolean,
+      required: true
+    },
+    blockBack: {
+      type: Boolean,
+      required: true
+    },
+    blockFinish: {
       type: Boolean,
       required: true
     }
@@ -399,9 +409,6 @@ export default {
 
 /* Media Queries */
 @media screen and (max-width: 767px) {
-  h5 {
-    font-size: 18px;
-  }
 
   .btn-width {
     font-size: 14px;
