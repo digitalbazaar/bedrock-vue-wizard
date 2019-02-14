@@ -33,7 +33,7 @@
     "bedrock-quasar": "^1.0.0",
     "bedrock-server": "^2.2.0",
     "bedrock-test": "^2.0.0",
-    "bedrock-views": "^6.0.0",
+    "bedrock-views": "^6.2.0",
     "bedrock-vue": "^1.0.0",
     "bedrock-vue-wizard": "file:..",
     "bedrock-web": "^1.0.0",
