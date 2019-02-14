@@ -113,10 +113,8 @@ export default {
         currentStep: this.currentStep,
         currentStepIndex: this.currentStepIndex
       })) {
-        console.log('next was canceled!');
         return;
       }
-      console.log('next is ok!');
       this.animations.slideOutLeft = true;
       this.animations.slideInLeft = false;
       this.animations.slideInRight = false;
@@ -137,10 +135,8 @@ export default {
         currentStep: this.currentStep,
         currentStepIndex: this.currentStepIndex
       })) {
-        console.log('back was canceled!');
         return;
       }
-      console.log('back is ok!');
       this.animations.slideOutRight = true;
       this.animations.slideInRight = false;
       this.animations.slideInLeft = false;
@@ -158,10 +154,8 @@ export default {
     },
     async onFinish() {
       if(!await this._emitCancelableEvent('finish')) {
-        console.log('finish was canceled!');
         return;
       }
-      console.log('finish is ok!');
     },
     async _emitCancelableEvent(name, event = {}) {
       try {
