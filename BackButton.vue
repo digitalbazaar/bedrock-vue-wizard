@@ -1,5 +1,9 @@
 <template>
-  <q-btn @click="back()" class="bg-white border-red-main text-red-main btn-width">Back</q-btn>
+  <q-btn
+    class="bg-white border-red-main text-red-main btn-width"
+    @click="back()">
+    Back
+  </q-btn>
 </template>
 <script>
 /*!
@@ -11,7 +15,7 @@ export default {
   name: 'NextButton',
   methods: {
     back() {
-      this.$emit('back')
+      this.$emit('back');
     }
   }
 };

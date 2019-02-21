@@ -1,6 +1,9 @@
 <template>
-  <q-btn @click="finish()"
-    class="bg-red-main text-white btn-width">Finish</q-btn>
+  <q-btn
+    class="bg-red-main text-white btn-width"
+    @click="finish()">
+    Finish
+  </q-btn>
 </template>
 <script>
 /*!
@@ -12,7 +15,7 @@ export default {
   name: 'FinishButton',
   methods: {
     finish() {
-      this.$emit('finish')
+      this.$emit('finish');
     }
   }
 };

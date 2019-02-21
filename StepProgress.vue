@@ -1,8 +1,10 @@
 <template>
   <div class="dot fadeInBottom">
     <ul class="list">
-      <li v-for="(step, index) in steps" v-bind:key="index"
-        :class="{'is-active': currentStep === index + 1}"></li>
+      <li
+        v-for="(step, index) in steps"
+        :key="index"
+        :class="{'is-active': currentStep === index + 1}" />
     </ul>
   </div>
 </template>
