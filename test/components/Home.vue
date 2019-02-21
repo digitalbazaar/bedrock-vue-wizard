@@ -5,7 +5,7 @@
     <div class="column items-center">
       <br-wizard
         :steps="steps"
-        :blockNext="blockNext"
+        :block-next="blockNext"
         @back="back($event)"
         @next="next($event)"
         @submit="submit($event)"
@@ -13,24 +13,24 @@
         <template slot="step">
           <welcome
             v-if="steps[stepIndex].name === 'Welcome'"
-            :steps="steps"/>
+            :steps="steps" />
           <domain
             v-if="steps[stepIndex].name === 'Domain'"
-            :storedData="domainData"
+            ref="domain"
+            :stored-data="domainData"
             @data="domainData = $event"
-            @blocker="blockNext = $event"
-            ref="domain" />
+            @blocker="blockNext = $event" />
           <administrator
             v-if="steps[stepIndex].name === 'Administrator'"
-            :storedData="adminData"
+            ref="administrator"
+            :stored-data="adminData"
             @data="adminData = $event"
-            @blocker="blockNext = $event"
-            ref="administrator" />
+            @blocker="blockNext = $event" />
           <review
             v-if="steps[stepIndex].name === 'Review'"
-            @data="reviewData = $event"
             :domain="domainData"
-            :administrator="adminData" />
+            :administrator="adminData"
+            @data="reviewData = $event" />
         </template>
       </br-wizard>
     </div>

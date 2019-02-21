@@ -1,5 +1,9 @@
 <template>
-  <q-btn @click="next()" class="bg-red-main text-white btn-width">Next</q-btn>
+  <q-btn
+    class="bg-red-main text-white btn-width"
+    @click="next()">
+    Next
+  </q-btn>
 </template>
 <script>
 /*!
@@ -11,7 +15,7 @@ export default {
   name: 'NextButton',
   methods: {
     next() {
-      this.$emit('next')
+      this.$emit('next');
     }
   }
 };

@@ -1,9 +1,13 @@
 <template>
   <div class="column items-center width-100 q-mt-xl">
-    <section class="column items-center width-100"
+    <section
+      class="column items-center width-100"
       :class="{'fadeInTop': animations.initialLoad}">
-      <div v-if="currentStep" class="box-width">
-        <div class="column items-center bg-white box-width q-pa-xl
+      <div
+        v-if="currentStep"
+        class="box-width">
+        <div
+          class="column items-center bg-white box-width q-pa-xl
           top-spacing round-borders shadow-6 overflow-hidden">
           <div class="circle absolute bg-white q-pa-lg">
             <img
@@ -13,47 +17,52 @@
                 'fadeOutIcon': animations.fadeOutIcon
               }">
           </div>
-          <div class="column items-center width-450"
+          <div
+            class="column items-center width-450"
             :class="{
               'slideInRight': animations.slideInRight,
               'slideOutLeft': animations.slideOutLeft,
               'slideInLeft': animations.slideInLeft,
               'slideOutRight': animations.slideOutRight
             }">
-            <h4 v-if="currentStep.heading !== ''"
+            <h4
+              v-if="currentStep.heading !== ''"
               class="text-center q-mt-sm q-mb-sm">
               {{currentStep.heading}}
             </h4>
-            <h5 v-if="currentStep.subheading !== ''"
+            <h5
+              v-if="currentStep.subheading !== ''"
               class="text-center q-mt-lg q-mb-lg">
               {{currentStep.subheading}}
             </h5>
 
             <!-- Custom Step Slot -->
-            <slot name="step"></slot>
+            <slot name="step" />
 
             <div class="row justify-center width-100 q-mt-lg">
               <back-button
                 v-if="currentStepIndex > 0"
                 class="q-mr-md"
-                @back="onBack()"
-                :disabled="blockBack" />
+                :disabled="blockBack"
+                @back="onBack()" />
               <next-button
                 v-if="currentStepIndex < steps.length - 1"
                 :class="{'q-ml-md': currentStepIndex > 0}"
-                @next="onNext()"
-                :disabled="blockNext" />
+                :disabled="blockNext"
+                @next="onNext()" />
               <finish-button
                 v-if="currentStepIndex === steps.length - 1"
                 class="q-ml-md"
-                @finish="onFinish()"
-                :disabled="blockFinish" />
+                :disabled="blockFinish"
+                @finish="onFinish()" />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <step-progress :currentStep="currentStepIndex + 1" :steps="steps" />
+    <step-progress
+      :current-step="currentStepIndex + 1"
+      :steps="steps" />
   </div>
 </template>
 
@@ -71,9 +80,6 @@ import FinishButton from './FinishButton.vue';
 export default {
   name: 'BrWizard',
   components: {StepProgress, NextButton, BackButton, FinishButton},
-  mounted() {
-    this.currentStep = this.steps[this.currentStepIndex];
-  },
   props: {
     steps: {
       type: Array,
@@ -106,6 +112,9 @@ export default {
         fadeOutIcon: false
       }
     };
+  },
+  mounted() {
+    this.currentStep = this.steps[this.currentStepIndex];
   },
   methods: {
     async onNext() {
