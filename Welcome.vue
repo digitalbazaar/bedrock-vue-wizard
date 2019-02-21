@@ -24,7 +24,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
   @media screen and (max-width: 767px) {
     h5 {
       font-size: 18px;
