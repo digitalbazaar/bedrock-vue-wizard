@@ -4,6 +4,9 @@
   "description": "Vue.js wizard component for Bedrock Web apps",
   "main": "index.js",
   "less": "main.less",
+  "scripts": {
+    "lint": "eslint \"**/*.{js,vue}\""
+  },  
   "peerDependencies": {
     "bedrock-quasar": "^2.0.0",
     "vue": "^2.5.16"
@@ -26,5 +29,10 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-vue-wizard",
   "bedrock": {
     "browserDependencies": "all"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-digitalbazaar": "^1.6.0",
+    "eslint-plugin-vue": "^5.2.2"
   }
 }
