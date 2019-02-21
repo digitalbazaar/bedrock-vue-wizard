@@ -2,9 +2,9 @@
   <div class="dot fadeInBottom">
     <ul class="list">
       <li
-        v-for="(step, index) in steps"
-        :key="index"
-        :class="{'is-active': currentStep === index + 1}" />
+        v-for="stepNumber in totalSteps"
+        :key="stepNumber"
+        :class="{'is-active': currentStep === stepNumber}" />
     </ul>
   </div>
 </template>
@@ -21,8 +21,8 @@ export default {
       type: Number,
       required: true
     },
-    steps: {
-      type: Array,
+    totalSteps: {
+      type: Number,
       required: true
     },
   }

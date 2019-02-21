@@ -6,10 +6,10 @@
   "less": "main.less",
   "scripts": {
     "lint": "eslint \"**/*.{js,vue}\""
-  },  
+  },
   "peerDependencies": {
     "bedrock-quasar": "^2.0.0",
-    "vue": "^2.5.16"
+    "vue": "^2.6.6"
   },
   "repository": {
     "type": "git",

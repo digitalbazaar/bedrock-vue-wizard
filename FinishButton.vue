@@ -1,6 +1,6 @@
 <template>
   <q-btn
-    class="bg-red-main text-white btn-width"
+    class="bg-primary-main text-white btn-width"
     @click="finish()">
     Finish
   </q-btn>
@@ -10,7 +10,6 @@
  * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
  */
 'use strict';
-
 export default {
   name: 'FinishButton',
   methods: {
@@ -20,5 +19,25 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="less" scoped>
+@import 'main.less';
+
+.bg-primary-main {
+  background-color: @br-wizard-primary;
+}
+
+.btn-width {
+  width: calc(50% - 16px);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+
+  .btn-width {
+    font-size: 14px;
+  }
+}
 </style>

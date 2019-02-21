@@ -4,4 +4,5 @@
 'use strict';
 
 export {default as BrWizard} from './BrWizard.vue';
+export {default as BrWizardStep} from './BrWizardStep.vue';
 export {default as Welcome} from './Welcome.vue';
