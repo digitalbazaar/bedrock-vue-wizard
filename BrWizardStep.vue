@@ -27,12 +27,12 @@
         'slideOutRight': animations.slideOutRight
       }">
       <h4
-        v-if="heading !== ''"
+        v-if="heading"
         class="text-center q-mt-sm q-mb-sm">
         {{heading}}
       </h4>
       <h5
-        v-if="subheading !== ''"
+        v-if="subheading"
         class="text-center q-mt-lg q-mb-lg">
         {{subheading}}
       </h5>
