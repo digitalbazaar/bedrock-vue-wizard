@@ -28,8 +28,8 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-@import 'main.less';
+<style lang="scss" scoped>
+@import 'main.scss';
 
 .list {
   list-style-type: none;
@@ -45,11 +45,11 @@ export default {
   margin: 15px 5px;
   text-align: center;
   position: relative;
-  background-color: @br-wizard-tertiary;
+  background-color: $br-wizard-tertiary;
 }
 
 .dot .is-active {
-  background-color: @br-wizard-primary;
+  background-color: $br-wizard-primary;
 }
 
 @keyframes fadeInBottom {

@@ -20,11 +20,11 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-@import 'main.less';
+<style lang="scss" scoped>
+@import 'main.scss';
 
 .bg-primary-main {
-  background-color: @br-wizard-primary;
+  background-color: $br-wizard-primary;
 }
 
 .btn-width {

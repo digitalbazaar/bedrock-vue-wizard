@@ -83,7 +83,9 @@ export default {
 };
 
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
+@import 'main.scss';
+
 .width-450 {
   max-width: 450px;
 }
@@ -241,5 +243,4 @@ export default {
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
 }
-
 </style>
