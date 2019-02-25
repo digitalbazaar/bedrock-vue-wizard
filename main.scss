@@ -1,0 +1,40 @@
+/*!
+ * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
+ */
+ /* Changes background, button, step progress colors */
+$br-wizard-primary: #027be3;
+$br-wizard-secondary: #40a2ea;
+$br-wizard-tertiary: #bee4ff;
+
+.btn-width {
+  width: calc(50% - 16px);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.circle {
+  margin-top: -148px;
+}
+
+.circle img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  
+  .btn-width {
+    font-size: 14px;
+  }
+
+  .circle {
+    margin-top: -84px;
+  }
+
+  .circle img {
+    width: 50px;
+    height: 50px;
+  }
+}

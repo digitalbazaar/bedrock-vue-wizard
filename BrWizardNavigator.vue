@@ -92,7 +92,9 @@ export default {
 };
 
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
+@import 'main.scss';
+
 .width-100 {
   width: 100%;
 }

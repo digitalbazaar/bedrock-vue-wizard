@@ -19,15 +19,15 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
-@import 'main.less';
+<style lang="scss" scoped>
+@import 'main.scss';
 
 .text-primary-main {
-  color: @br-wizard-primary;
+  color: $br-wizard-primary;
 }
 
 .border-primary-main {
-  border: 1px solid @br-wizard-primary;
+  border: 1px solid $br-wizard-primary;
 }
 
 .btn-width {
@@ -39,7 +39,6 @@ export default {
 
 /* Media Queries */
 @media screen and (max-width: 767px) {
-
   .btn-width {
     font-size: 14px;
   }
