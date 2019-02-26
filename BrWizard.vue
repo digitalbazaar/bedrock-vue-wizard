@@ -18,6 +18,12 @@
               :block-next="blockNext"
               :current-step-index="currentStepIndex"
               :total-steps="totalSteps"
+              :class="{
+                'slideInRight': animations.slideInRight,
+                'slideOutLeft': animations.slideOutLeft,
+                'slideInLeft': animations.slideInLeft,
+                'slideOutRight': animations.slideOutRight
+              }"
               @back="onBack()"
               @finish="onFinish()"
               @next="onNext()" />
@@ -174,26 +180,6 @@ export default {
   display: none;
 }
 
-/* Animation */
-@keyframes fadeInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fadeInTop {
-  animation-delay: .2s;
-  animation-name: fadeInTop;
-  animation-duration: 0.7s;
-  animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
-}
-
 .circle {
   border-top-left-radius: 152px;
   border-top-right-radius: 152px;
@@ -225,5 +211,119 @@ export default {
   .overflow-hidden {
     padding: 36px 24px 24px 24px;
   }
+}
+
+/* Animation */
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInTop {
+  animation-delay: .2s;
+  animation-name: fadeInTop;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  animation-delay: 0s;
+  animation-name: fadeInRight;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+  background: none;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  animation-delay: 0s;
+  animation-name: slideInRight;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.slideOutLeft {
+  animation-delay: 0s;
+  animation-name: slideOutLeft;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  animation-delay: 0s;
+  animation-name: slideInLeft;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.slideOutRight {
+  animation-delay: 0s;
+  animation-name: slideOutRight;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }
 </style>
