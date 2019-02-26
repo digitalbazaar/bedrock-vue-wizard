@@ -1,6 +1,7 @@
 <template>
   <q-btn
-    class="bg-primary-main text-white btn-width"
+    class="text-white btn-width"
+    :style="style"
     @click="finish()">
     Finish
   </q-btn>
@@ -10,8 +11,22 @@
  * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
  */
 'use strict';
+
+import {utils} from 'quasar-framework';
+const {colors} = utils;
+
 export default {
   name: 'FinishButton',
+  computed: {
+    primary() {
+      return colors.getBrand('primary');
+    },
+    style() {
+      return {
+        backgroundColor: this.primary
+      };
+    }
+  },
   methods: {
     finish() {
       this.$emit('finish');
@@ -21,10 +36,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import 'main.scss';
-
-.bg-primary-main {
-  background-color: $br-wizard-primary;
-}
 
 .btn-width {
   width: calc(50% - 16px);
