@@ -10,16 +10,18 @@
           <div
             class="circle absolute bg-white q-pa-lg"
             style="min-width: 150px;" />
-          <slot />
-          <br-wizard-navigator
-            :block-back="blockBack"
-            :block-finish="blockFinish"
-            :block-next="blockNext"
-            :current-step-index="currentStepIndex"
-            :total-steps="totalSteps"
-            @back="onBack()"
-            @finish="onFinish()"
-            @next="onNext()" />
+          <div>
+            <slot />
+            <br-wizard-navigator
+              :block-back="blockBack"
+              :block-finish="blockFinish"
+              :block-next="blockNext"
+              :current-step-index="currentStepIndex"
+              :total-steps="totalSteps"
+              @back="onBack()"
+              @finish="onFinish()"
+              @next="onNext()" />
+          </div>
         </div>
       </div>
     </section>
