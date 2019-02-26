@@ -115,6 +115,7 @@ export default {
     padding: 36px 24px 24px 24px;
   }
 }
+
 /* Animation */
 @keyframes fadeInRight {
   0% {
