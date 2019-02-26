@@ -1,6 +1,7 @@
 <template>
   <q-btn
-    class="bg-white border-primary-main text-primary-main btn-width"
+    class="bg-white border-primary-main btn-width"
+    :style="style"
     @click="back()">
     Back
   </q-btn>
@@ -10,8 +11,23 @@
  * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
  */
 'use strict';
+
+import {utils} from 'quasar-framework';
+const {colors} = utils;
+
 export default {
   name: 'BackButton',
+  computed: {
+    primary() {
+      return colors.getBrand('primary');
+    },
+    style() {
+      return {
+        color: this.primary,
+        borderColor: this.primary
+      };
+    }
+  },
   methods: {
     back() {
       this.$emit('back');
@@ -22,12 +38,8 @@ export default {
 <style lang="scss" scoped>
 @import 'main.scss';
 
-.text-primary-main {
-  color: $br-wizard-primary;
-}
-
 .border-primary-main {
-  border: 1px solid $br-wizard-primary;
+  border: 1px solid;
 }
 
 .btn-width {

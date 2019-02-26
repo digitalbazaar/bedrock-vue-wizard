@@ -1,10 +1,11 @@
 <template>
-  <div class="dot fadeInBottom">
+  <div
+    class="dot fadeInBottom">
     <ul class="list">
       <li
         v-for="stepNumber in totalSteps"
         :key="stepNumber"
-        :class="{'is-active': currentStep === stepNumber}" />
+        :style="style(stepNumber)" />
     </ul>
   </div>
 </template>
@@ -13,6 +14,9 @@
  * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
  */
 'use strict';
+
+import {utils} from 'quasar-framework';
+const {colors} = utils;
 
 export default {
   name: 'StepProgress',
@@ -25,6 +29,23 @@ export default {
       type: Number,
       required: true
     },
+  },
+  computed: {
+    primary() {
+      return colors.getBrand('primary');
+    },
+    lightenedPrimary() {
+      return colors.lighten(colors.getBrand('primary'), 65);
+    }
+  },
+  methods: {
+    style(stepNumber) {
+      return this.currentStep === stepNumber ? {
+        backgroundColor: this.primary
+      } : {
+        backgroundColor: this.lightenedPrimary
+      };
+    }
   }
 };
 </script>
@@ -45,11 +66,6 @@ export default {
   margin: 15px 5px;
   text-align: center;
   position: relative;
-  background-color: $br-wizard-tertiary;
-}
-
-.dot .is-active {
-  background-color: $br-wizard-primary;
 }
 
 @keyframes fadeInBottom {
