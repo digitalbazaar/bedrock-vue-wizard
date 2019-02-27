@@ -1,6 +1,6 @@
 # bedrock-vue-wizard ChangeLog
 
-## 2.0.0 - xxxx
+## 2.0.0 - 2019-02-27
 
 ### Changed
 - **BREAKING**: Remove `steps` props for `br-wizard`.
