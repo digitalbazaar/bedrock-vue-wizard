@@ -12,7 +12,7 @@
  */
 'use strict';
 
-import {utils} from 'quasar-framework';
+import {utils} from 'quasar';
 const {colors} = utils;
 
 export default {

@@ -7,7 +7,7 @@
     "lint": "eslint \"**/*.{js,vue}\""
   },
   "peerDependencies": {
-    "bedrock-quasar": "^2.0.0",
+    "bedrock-quasar": "digitalbazaar/bedrock-quasar#v1",
     "vue": "^2.6.6"
   },
   "repository": {
@@ -32,6 +32,7 @@
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-digitalbazaar": "^1.6.0",
+    "eslint-plugin-jsdoc": "^4.4.2",
     "eslint-plugin-vue": "^5.2.2"
   }
 }
