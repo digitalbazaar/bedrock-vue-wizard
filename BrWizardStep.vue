@@ -1,5 +1,7 @@
 <template>
-  <div class="column items-center">
+  <div class="column items-center s-step-content">
+    <div
+      class="circle-bg absolute bg-white q-pa-lg"/>
     <div class="circle absolute q-pa-lg">
       <img
         v-if="image && !icon"
@@ -86,12 +88,24 @@ export default {
 <style lang="scss" scoped>
 @import 'main.scss';
 
+.s-step-content {
+  z-index: 1;
+  position: relative;
+}
+
 .width-450 {
   max-width: 450px;
 }
 
 .circle {
   margin-top: -148px;
+}
+
+.circle-bg {
+  margin-top: -148px;
+  border-radius: 50% 50% 0 0;
+  height: 150px;
+  width: 150px;
 }
 
 .circle img {
@@ -146,9 +160,14 @@ export default {
 @keyframes slideInRight {
   0% {
     transform: translateX(100vw);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -163,9 +182,14 @@ export default {
 @keyframes slideOutLeft {
   0% {
     transform: translateX(0);
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
   }
   100% {
     transform: translateX(-100vw);
+    opacity: 0;
   }
 }
 
@@ -180,9 +204,14 @@ export default {
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100vw);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -197,9 +226,14 @@ export default {
 @keyframes slideOutRight {
   0% {
     transform: translateX(0);
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
   }
   100% {
     transform: translateX(100vw);
+    opacity: 0;
   }
 }
 
