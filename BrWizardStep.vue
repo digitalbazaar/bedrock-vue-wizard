@@ -30,12 +30,12 @@
       }">
       <h4
         v-if="heading"
-        class="text-center q-mt-sm q-mb-sm">
+        class="text-center q-mt-sm q-mb-sm heading">
         {{heading}}
       </h4>
       <h5
         v-if="subheading"
-        class="text-center q-mt-lg q-mb-lg">
+        class="text-center q-mt-lg q-mb-lg subheading">
         {{subheading}}
       </h5>
       <!-- custom step content -->
@@ -116,13 +116,17 @@ export default {
 /* Media Queries */
 @media screen and (max-width: 767px) {
 
-  .circle {
-    margin-top: -84px;
-  }
-
   .circle img {
     width: 50px;
     height: 50px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .subheading {
+    font-size: 24px;
   }
 
   .overflow-hidden {
