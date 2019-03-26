@@ -1,15 +1,12 @@
 <template>
-  <div class="column items-center width-100 q-mt-xl">
+  <div class="column items-center width-100">
     <section
-      class="column items-center width-100"
+      class="column items-center width-100 s-wizard-box"
       :class="{'fadeInTop': animations.initialLoad}">
       <div class="box-width">
         <div
           class="column items-center bg-white box-width q-pa-xl
-          top-spacing round-borders shadow-6 overflow-hidden">
-          <div
-            class="circle absolute bg-white q-pa-lg"
-            style="min-width: 150px;" />
+          top-spacing rounded-borders shadow-6">
           <div>
             <slot />
             <br-wizard-navigator
@@ -32,6 +29,7 @@
       </div>
     </section>
     <step-progress
+      class="s-progress"
       :current-step="currentStepIndex + 1"
       :total-steps="totalSteps" />
   </div>
@@ -159,6 +157,17 @@ export default {
 <style lang="scss" scoped>
 @import 'main.scss';
 
+.s-wizard-box {
+  margin-top: 72px;
+  position: relative;
+  z-index: 1;
+}
+
+.s-progress {
+  position: relative;
+  z-index: 0;
+}
+
 .top-spacing {
   padding-top: 72px;
 }
@@ -172,41 +181,16 @@ export default {
   width: 100%;
 }
 
-.overflow-hidden {
-  overflow: hidden
+.s-overflow {
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-.circle {
-  border-top-left-radius: 152px;
-  border-top-right-radius: 152px;
-  margin-top: -148px;
-  height: 76px;
-  box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-.circle img {
-  width: 100px;
-}
-
 /* Media Queries */
 @media screen and (max-width: 767px) {
-
-  .circle {
-    margin-top: -84px;
-    border-top-left-radius: 76px;
-    border-top-right-radius: 76px;
-    height: 38px;
-    box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
-  }
-
-  .circle img {
-    width: 50px;
-    height: 50px;
-  }
 
   .overflow-hidden {
     padding: 36px 24px 24px 24px;
@@ -262,9 +246,14 @@ export default {
 @keyframes slideInRight {
   0% {
     transform: translateX(100vw);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -279,9 +268,14 @@ export default {
 @keyframes slideOutLeft {
   0% {
     transform: translateX(0);
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
   }
   100% {
     transform: translateX(-100vw);
+    opacity: 0;
   }
 }
 
@@ -296,9 +290,14 @@ export default {
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100vw);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -313,9 +312,14 @@ export default {
 @keyframes slideOutRight {
   0% {
     transform: translateX(0);
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
   }
   100% {
     transform: translateX(100vw);
+    opacity: 0;
   }
 }
 
