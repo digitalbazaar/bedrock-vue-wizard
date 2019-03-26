@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-center width-100 q-mt-lg">
+  <div class="row justify-center width-100 q-mt-lg s-buttons">
     <back-button
       v-if="currentStepIndex > 0"
       class="q-mr-md"
@@ -94,6 +94,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import 'main.scss';
+
+.s-buttons {
+  z-index: 0;
+  position: relative;
+}
 
 .width-100 {
   width: 100%;
