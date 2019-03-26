@@ -1,7 +1,6 @@
-
 <template>
   <q-btn
-    class="text-white btn-width"
+    class="text-weight-bold text-capitalize text-white btn-width"
     :style="style"
     @click="next()">
     Next
@@ -40,9 +39,7 @@ export default {
 
 .btn-width {
   width: calc(50% - 16px);
-  text-transform: capitalize;
   font-size: 16px;
-  font-weight: bold;
 }
 
 /* Media Queries */
