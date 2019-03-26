@@ -103,9 +103,10 @@ export default {
 
 .circle-bg {
   margin-top: -148px;
-  border-radius: 50% 50% 0 0;
-  height: 150px;
+  border-radius: 150px 150px 0 0;
+  height: 76px;
   width: 150px;
+  box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
 .circle img {

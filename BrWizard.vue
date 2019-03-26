@@ -189,33 +189,8 @@ export default {
   display: none;
 }
 
-.circle {
-  border-top-left-radius: 152px;
-  border-top-right-radius: 152px;
-  margin-top: -148px;
-  height: 76px;
-  box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
-}
-
-.circle img {
-  width: 100px;
-}
-
 /* Media Queries */
 @media screen and (max-width: 767px) {
-
-  .circle {
-    margin-top: -84px;
-    border-top-left-radius: 76px;
-    border-top-right-radius: 76px;
-    height: 38px;
-    box-shadow: 0px -3px 5px -1px rgba(0, 0, 0, 0.2);
-  }
-
-  .circle img {
-    width: 50px;
-    height: 50px;
-  }
 
   .overflow-hidden {
     padding: 36px 24px 24px 24px;
