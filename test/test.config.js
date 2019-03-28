@@ -12,6 +12,6 @@ config.karma.suites['bedrock-vue-wizard'] = path.join('web', '**', '*.js');
 config.karma.config.webpack.resolve = {
   alias: {
     quasar$: path.resolve(
-      __dirname, 'node_modules/quasar-framework/dist/umd/quasar.mat.umd.js')
+      __dirname, 'node_modules/quasar/dist/quasar.umd.js')
   }
 };
