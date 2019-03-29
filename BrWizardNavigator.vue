@@ -103,5 +103,12 @@ export default {
 .width-100 {
   width: 100%;
 }
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  .s-buttons {
+    margin-top: 0;
+  }
+}
 </style>
 
