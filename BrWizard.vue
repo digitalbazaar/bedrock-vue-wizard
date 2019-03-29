@@ -191,9 +191,12 @@ export default {
 
 /* Media Queries */
 @media screen and (max-width: 767px) {
-
   .overflow-hidden {
     padding: 36px 24px 24px 24px;
+  }
+
+  .top-spacing {
+    padding: 72px 16px 16px 16px
   }
 }
 
