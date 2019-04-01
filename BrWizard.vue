@@ -14,6 +14,7 @@
               :block-finish="blockFinish"
               :block-next="blockNext"
               :current-step-index="currentStepIndex"
+              :disable-navigation="disableNavigation"
               :total-steps="totalSteps"
               :class="{
                 'slideInRight': animations.slideInRight,
@@ -21,9 +22,9 @@
                 'slideInLeft': animations.slideInLeft,
                 'slideOutRight': animations.slideOutRight
               }"
-              @back="onBack()"
-              @finish="onFinish()"
-              @next="onNext()" />
+              @back="onBack"
+              @finish="onFinish"
+              @next="onNext" />
           </div>
         </div>
       </div>
@@ -88,15 +89,28 @@ export default {
         slideOutLeft: false,
         fadeInIcon: false,
         fadeOutIcon: false
-      }
+      },
+      loadingBack: false,
+      loadingFinish: false,
+      loadingNext: false
     };
+  },
+  computed: {
+    disableNavigation() {
+      return this.loadingBack || this.loadingFinish || this.loadingNext;
+    }
   },
   methods: {
     async onNext() {
-      if(!await this._emitCancelableEvent('next', {
-        currentStepIndex: this.currentStepIndex
-      })) {
-        return;
+      this.loadingNext = true;
+      try {
+        if(!await this._emitCancelableEvent('next', {
+          currentStepIndex: this.currentStepIndex
+        })) {
+          return;
+        }
+      } finally {
+        this.loadingNext = false;
       }
       this.animations.slideOutLeft = true;
       this.animations.slideInLeft = false;
@@ -112,10 +126,15 @@ export default {
       }, 300);
     },
     async onBack() {
-      if(!await this._emitCancelableEvent('back', {
-        currentStepIndex: this.currentStepIndex
-      })) {
-        return;
+      this.loadingBack = true;
+      try {
+        if(!await this._emitCancelableEvent('back', {
+          currentStepIndex: this.currentStepIndex
+        })) {
+          return;
+        }
+      } finally {
+        this.loadingBack = false;
       }
       this.animations.slideOutRight = true;
       this.animations.slideInRight = false;
@@ -131,8 +150,13 @@ export default {
       }, 300);
     },
     async onFinish() {
-      if(!await this._emitCancelableEvent('finish')) {
-        return;
+      this.loadingFinish = true;
+      try {
+        if(!await this._emitCancelableEvent('finish')) {
+          return;
+        }
+      } finally {
+        this.loadingFinish = false;
       }
     },
     async _emitCancelableEvent(name, event = {}) {

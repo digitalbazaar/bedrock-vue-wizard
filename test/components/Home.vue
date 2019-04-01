@@ -90,10 +90,17 @@ export default {
       console.log('back was triggered in the wizard', event);
     },
     finish(event) {
+      const {waitUntil} = event;
+      const p = sleep(2000);
+      waitUntil(p);
       console.log('finish was triggered in the wizard', event);
     }
   }
 };
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 </script>
 <style>
 </style>
