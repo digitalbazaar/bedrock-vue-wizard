@@ -6,7 +6,7 @@
       <div class="box-width">
         <div
           class="column items-center bg-white box-width q-pa-xl
-          top-spacing round-borders shadow-6">
+          top-spacing rounded-borders shadow-6">
           <div>
             <slot />
             <br-wizard-navigator
