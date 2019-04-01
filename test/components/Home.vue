@@ -32,10 +32,11 @@
 
 import {BrWizard, BrWizardStep, Welcome} from 'bedrock-vue-wizard';
 import Review from './Review.vue';
+import SampleStep from './SampleStep.vue';
 
 export default {
   name: 'Home',
-  components: {BrWizard, BrWizardStep, Welcome, Review},
+  components: {BrWizard, BrWizardStep, Welcome, SampleStep, Review},
   data() {
     return {
       blockNext: false,
@@ -47,6 +48,16 @@ export default {
         subheading: 'The following steps will help you install the software:',
         component: Welcome
       }, {
+        name: 'Data Entry',
+        icon: {
+          name: 'fas fa-list',
+          size: '40px',
+          color: 'primary'
+        },
+        heading: '',
+        subheading: '',
+        component: SampleStep
+      },{
         name: 'Review',
         icon: {
           name: 'fas fa-search',
