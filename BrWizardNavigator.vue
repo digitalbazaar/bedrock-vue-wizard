@@ -3,17 +3,17 @@
     <back-button
       v-if="currentStepIndex > 0"
       class="q-mr-md"
-      :disabled="blockBack"
+      :disabled="disableBack"
       @back="onBack()" />
     <next-button
       v-if="currentStepIndex < totalSteps - 1"
       :class="{'q-ml-md': currentStepIndex > 0}"
-      :disabled="blockNext"
+      :disabled="disableNext"
       @next="onNext()" />
     <finish-button
       v-if="currentStepIndex === totalSteps - 1"
       class="q-ml-md"
-      :disabled="blockFinish"
+      :disabled="disableFinish"
       @finish="onFinish()" />
   </div>
 </template>
@@ -44,6 +44,10 @@ export default {
       type: Boolean,
       required: true
     },
+    disableNavigation: {
+      type: Boolean,
+      default: false
+    },
     currentStepIndex: {
       type: Number,
       required: true
@@ -53,40 +57,33 @@ export default {
       required: true
     },
   },
+  data() {
+    return {
+      loadingBack: false,
+      loadingFinish: false,
+      loadingNext: false
+    };
+  },
+  computed: {
+    disableBack() {
+      return this.blockBack || this.disableNavigation;
+    },
+    disableFinish() {
+      return this.blockFinish || this.disableNavigation;
+    },
+    disableNext() {
+      return this.blockNext || this.disableNavigation;
+    }
+  },
   methods: {
     async onNext() {
-      if(!await this._emitCancelableEvent('next', {
-        currentStepIndex: this.currentStepIndex
-      })) {
-        return;
-      }
+      this.$emit('next');
     },
     async onBack() {
-      if(!await this._emitCancelableEvent('back', {
-        currentStepIndex: this.currentStepIndex
-      })) {
-        return;
-      }
+      this.$emit('back');
     },
     async onFinish() {
-      if(!await this._emitCancelableEvent('finish')) {
-        return;
-      }
-    },
-    async _emitCancelableEvent(name, event = {}) {
-      try {
-        let promise = Promise.resolve();
-        this.$emit(name, {
-          ...event,
-          waitUntil: p => promise = p
-        });
-        await promise;
-        // not canceled
-        return true;
-      } catch(e) {
-        // canceled
-        return false;
-      }
+      this.$emit('finish');
     }
   }
 };
