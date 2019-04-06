@@ -1,12 +1,14 @@
 <template>
-  <ul class="list q-mb-none q-mt-none">
-    <h5
-      v-for="(step, index) in steps.slice(1)"
-      :key="index"
-      class="q-mt-xs q-mb-xs">
-      {{index + 1}}. {{step.name}}
-    </h5>
-  </ul>
+  <div class="row justify-center">
+    <ul class="list q-mb-none q-mt-non q-pl-none">
+      <h5
+        v-for="(step, index) in steps.slice(1)"
+        :key="index"
+        class="q-mt-xs q-mb-xs">
+        {{index + 1}}. {{step.name}}
+      </h5>
+    </ul>
+  </div>
 </template>
 <script>
 /*!
