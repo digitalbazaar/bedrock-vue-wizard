@@ -1,5 +1,18 @@
 # bedrock-vue-wizard ChangeLog
 
+## 3.0.0 - TBD
+
+### Changed
+- Upgrade to bedrock-quasar version 3.0.
+
+### Added
+- Add babel-eslint to parse dynamic imports.
+- Add sample step for testing purposes.
+- Add 320px mobile support.
+
+### Removed
+- Remove babel-eslint from root ESLint config.
+
 ## 2.0.0 - 2019-02-27
 
 ### Changed
@@ -10,7 +23,6 @@
    steps.
 - Move CSS rules to the components they apply to.
 - Decouple the wizard navigator and wizard step from the main wizard component.
-
 
 ## 1.0.1 - 2019-02-14
 
