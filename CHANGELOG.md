@@ -1,6 +1,6 @@
 # bedrock-vue-wizard ChangeLog
 
-## 3.0.0 - TBD
+## 3.0.0 - 2019-04-09
 
 ### Changed
 - Upgrade to bedrock-quasar version 3.0.
