@@ -98,11 +98,11 @@ export default {
 }
 
 .circle {
-  margin-top: -148px;
+  margin-top: -124px;
 }
 
 .circle-bg {
-  margin-top: -148px;
+  margin-top: -124px;
   border-radius: 150px 150px 0 0;
   height: 76px;
   width: 150px;
