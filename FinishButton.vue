@@ -2,7 +2,6 @@
   <q-btn
     class="text-weight-bold text-capitalize text-white btn-width"
     :style="style"
-    :disable="disabled"
     @click="finish()">
     Finish
   </q-btn>
@@ -18,11 +17,6 @@ const {colors} = utils;
 
 export default {
   name: 'FinishButton',
-  data() {
-    return {
-      disabled: false,
-    };
-  },
   computed: {
     primary() {
       return colors.getBrand('primary');
@@ -35,7 +29,6 @@ export default {
   },
   methods: {
     finish() {
-      this.disabled = true;
       this.$emit('finish');
     }
   }
