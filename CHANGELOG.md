@@ -1,5 +1,10 @@
 # bedrock-vue-wizard ChangeLog
 
+## 3.1.0 - 2019-xx-xx
+
+## Changed
+- Disable navigation buttons until await completes.
+
 ## 3.0.0 - 2019-04-09
 
 ### Changed
