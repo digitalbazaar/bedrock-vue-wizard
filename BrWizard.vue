@@ -6,7 +6,7 @@
       <div class="box-width">
         <div
           class="column items-center bg-white box-width q-pa-xl
-          top-spacing rounded-borders shadow-6">
+          rounded-borders shadow-6">
           <div>
             <slot />
             <br-wizard-navigator
@@ -190,10 +190,6 @@ export default {
 .s-progress {
   position: relative;
   z-index: 0;
-}
-
-.top-spacing {
-  padding-top: 72px;
 }
 
 .box-width {
